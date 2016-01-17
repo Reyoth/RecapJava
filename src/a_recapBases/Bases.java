@@ -2,26 +2,19 @@ package a_recapBases;
 
 public class Bases {
 	
-	//la méthode main ne sert qu'a lancer notre programme
-	//evitez d'ecrire le tout dedans
+	/* La méthode main ne sert qu'à lancer notre programme
+	 * interdiction d'écrire le tout votre code dedans.
+	 * Elle est par ailleurs statique comme toutes les méthodes de cette classe Bases.
+	 * Ce qui signifie qu'elles sont intépendantes de tout objet.*/
 	public static void main(String[] args) {
-		//testBases();
+		testBases(); // appel de la méthode testBases
 	}
 	
 	
-	
-	public static void testBases(){
-		//###### Test avec appels de methodes (voir bas de la page pour les methodes) ######
-		System.out.println("Voici mon message :");
-		System.out.println(welcome() + welcome2());
-
-		addition(5, 15);
-		System.out.println("Hors de ma méthode " + division(5.5 ,100));
-
-		//###### Exo sans methodes ######
-		//les conditions
-		int x; //on déclare la variable x
-		x = 0; //on initialise la variable x
+	public static void testBases(){		
+		// les conditions
+		int x; // on déclare la variable x (on reserve un espace mémoire)
+		x = 0; // on initialise la variable x (on lui donne une valeur)
 		int y;
 		y = 2;
 
@@ -36,10 +29,12 @@ public class Bases {
 		}
 
 		//#############################################
-		//les boucles
-		int a = 0;//on déclare et initialise la variable a
+		// les boucles
+		int a = 0;// ici on déclare et initialise la variable a
 		int b = 0;
-
+		
+		/* While (condition) {...}
+		 * TODO*/
 		while (a < 5) {
 			b = b + 2;
 			a = a + 1;
@@ -47,12 +42,13 @@ public class Bases {
 
 		System.out.println("b = " + b);
 		System.out.println("a = " + a);
-
-		//Attention, le do while execute une premiere fois le code avant
-		//de verifier si la condition est remplie
-		a = 0; //on reinitialise les valeurs à 0
+		
+		a = 0; // on reinitialise les valeurs à 0
 		b = 0;
 
+		/* Do {...} while (condition); 
+		 * Attention, le do while execute une premiere fois le code avant
+		 * de verifier si la condition est remplie*/
 		do {
 			b = b+ 2;
 			a = a + 1;
@@ -61,8 +57,9 @@ public class Bases {
 		System.out.println("b = " + b);
 		System.out.println("a = " + a);
 
-		//le for est toujours composé de 3 parties :
-		//la déclaration/initialisation | la conditions | l'incrémentation/déincrementation
+		/* For (initialisation;condition;incrémentation) {...}
+		 * le for est toujours composé de 3 parties :
+		 * l'initialisation du compteur | la conditions | l'(dé)incrémentation du compteur*/
 		for (int i = 1; i <= 3; i++) { //i++ peut se noter aussi i = i + 1
 			System.out.println("coucou");
 		}
@@ -78,43 +75,51 @@ public class Bases {
 		System.out.println("valeur = " + valeur);
 		
 		
-		//Le for each
+		// Le for each TODO
 		int [] tabI= {5,2,3,4,6}; //déclaraton/initialisation du tableau
 		
 		for (int i : tabI) { //for each "int" in tabI (pour chaque "int" dans tabI)
 			System.out.println(i);
 		}
-	}//fin de la méthode testBases()	
+		
+		//###### Test avec appels de methodes (voir bas de la page pour les methodes) ######
+		System.out.println("Voici mon message :");
+		System.out.println(welcome() + welcome2());
+		
+		// addition() étant une méthode qui ne renvoie rien (void), c'est une procédure
+		addition(5, 15); 
+		// ici, division renvoie un double, c'est donc une fonction
+		System.out.println("Hors de ma méthode " + division(5.5 ,100));
+				
+	}// fin de la méthode testBases()	
 	//#################################################################
 
-	//############# Les methodes (fonction ou procédure) ###########
+	//############# Les méthodes (fonction ou procédure) ###########
 	
-	//fonction qui retourne un string Bonjour
-	public static String welcome() { //entete = Welcome()message string;
+	//Méthode qui retourne un string Bonjour (fonction)
+	public static String welcome() { // entête = Welcome()message string;
 		return "Bonjour";
 	}
-
-
-	//fonction aussi
+	//celle-ci retourne à vous!
 	public static String welcome2(){
-		return " a vous !";
+		return " à vous !";
 	}
 
-	//#### procedure avec parametres ####
-	//Addition( premierChiffre: int ; deuxiemeChiffre : int );
+	//#### Méthode avec parametres (type procédure) ####
+	//Entête : addition( premierChiffre: int ; deuxiemeChiffre : int );
 	public static void addition( int premierChiffre, int deuxiemeChiffre) {
 
-		int nombreTemp; //déclaration de la variable ( on reserve un espace mémoire)
-		nombreTemp = premierChiffre + deuxiemeChiffre; //initialisation d la variable ( on lui donne une valeur)
+		int nombreTemp; // déclaration de la variable 
+		nombreTemp = premierChiffre + deuxiemeChiffre; // initialisation de la variable
 		System.out.println( nombreTemp);
 	}
 
-	//#### fonction avec parametres ####
-	//Division( prems : double ; deums : double ) nombreTemp : double;
-	//Attention!!!!, fonction car retourne un double
+	//#### Méthode avec parametres (type fonction) ####
+	// Entête : division( prems : double ; deums : double ) nombreTemp : double;
+	// Attention!!!!, de type fonction car retourne un double
 	public static double division(double prems, double deums) {
-		double nombreTemp;  //la variable n'est pas la même que celle de la procédure ci-dessus 
-							//a cause de la portée des variables (comprise entre {} )
+		double nombreTemp;	/* la variable n'est pas la même que celle de la procédureci-dessus
+							 * a cause de la portée des variables (comprise entre {} )*/
 		nombreTemp = prems / deums;
 		System.out.println("Dans ma méthode : " + nombreTemp);
 		return nombreTemp;
