@@ -1,4 +1,4 @@
-package c_ClassesAbstraitesEtInterfaces;
+package c_classes_abstraites_et_interfaces;
 
 public class Archer extends Personnage {
 

@@ -1,4 +1,4 @@
-package c_ClassesAbstraitesEtInterfaces;
+package c_classes_abstraites_et_interfaces;
 
 public class Sort implements Attaque {
 
@@ -6,6 +6,7 @@ public class Sort implements Attaque {
 		// TODO Auto-generated constructor stub
 	}
 
+	@Override
 	public int attaquer(){
 		return 0; // TODO
 	}

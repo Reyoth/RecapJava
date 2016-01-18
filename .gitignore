@@ -1,6 +1,8 @@
 .classpath
 .project
-
+.settings/
+miglayout-src.zip
+miglayout15-swing.jar
 
 .:
 bin
