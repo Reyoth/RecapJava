@@ -21,7 +21,7 @@ Je mettrai à jour ce repository et y ajouterai de nouveaux éléments.
 		* La super classes Ville
 		* La classe héritiaire Capitale
 * Les classes abstraites et les interfaces
-	* Petit jeux de role avec des personnages ( à terminer)
+	* Petit jeux de role avec des personnages ( à terminer )
 
-Pour toutes demandes de modification / correction / ajout, cliquez sur "New issue" à cette adresse:
-[onglet issues](https://github.com/Reyoth/RecapJava/issues) 
+Pour toutes demandes de modification / correction / ajout, cliquez sur **New issue** à cette adresse:
+**[onglet issues](https://github.com/Reyoth/RecapJava/issues)**
