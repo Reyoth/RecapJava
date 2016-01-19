@@ -2,62 +2,120 @@ package a_bases;
 
 public class Bases {
 	
-	/* La méthode main ne sert qu'à lancer notre programme
-	 * interdiction d'écrire le tout votre code dedans.
+	/* La méthode main ne sert qu'à lancer notre programme.
+	 * INTERDICTION d'écrire tout votre code dedans.
 	 * Elle est par ailleurs statique comme toutes les méthodes de cette classe Bases.
-	 * Ce qui signifie qu'elles sont intépendantes de tout objet.*/
+	 * Ce qui signifie qu'elles sont intépendantes de tout objet. (On ne crée pas d'objet pour les utiliser).*/
 	public static void main(String[] args) {
 		testBases(); // appel de la méthode testBases
 	}
 	
 	
 	public static void testBases(){		
-		// les conditions
-		int x; // on déclare la variable x (on reserve un espace mémoire)
-		x = 0; // on initialise la variable x (on lui donne une valeur)
-		int y;
-		y = 2;
-
+		
+		int x; // On déclare la variable x (on reserve un espace mémoire).
+		x = 5; // On initialise la variable x (on lui donne une valeur).
+		int y; // Les types primitifs sont boolean, byte, short, int, long, double, char.
+		y = 3;
+		
+		// ###### lES STRUCTURES DE CONTROLE ######
+		
+		/* le test 
+		 * 		if (condition) {...}
+		 * 		else if (condition) {...}
+		 * 		else {...}
+		 * La (condition) renvoie TOUJOURS un boolean (true/false).
+		 * Il n'est pas obligatoire d'âjouter un "else if / else" si ce n'est pas nécéssaire.
+		 * On peut aussi avoir autant de "else if" que l'on souhaite mais cela rend le code difficile à lire,
+		 * par contre un "else" n'a JAMAIS de condition*/
 		if (x > 0 && y < 0){
 			System.out.println("Youpiiie");
 		}
 		else if(y == 3) {
-
+			System.out.println("C'est égale à 3");
+		}
+		else if (x > Integer.MAX_VALUE) { // Integer.MAX_VALUE vaut la valeur maximum d'un int soit 2147483647
+			System.out.println("là, ca ne va pas etre possible...");
+		}
+		else if ((y&1)==1) { // comparaison bit à bit, ici on regarde si le 1er bit de y = 1
+			System.out.println("on a comparer le 1er bit de y avec 1, si c'est égale c'est qu'il est impaire");
 		}
 		else {
 			System.out.println("Snifff");
 		}
+		
+		/*le switch
+		 * cette structure rend plus lisible un code comprennant beaucoup de possibilité
+		 * de plus, contrairement au "if", il permet d'executer plusieurs cas à la suite si 
+		 * on ne mets pas de "break;".
+		 * Ainsi, ici, si x vaut 8 il écrira juste "x = 8" mais si il vaut 5, il écrira :
+		 * x = 5
+		 * x = 4
+		 * x = 3
+		 * x = 2
+		 * x = 1*/
+		switch (x) {
+		case 8:
+			System.out.println("x = 8");
+			break;
+		case 7:
+			System.out.println("x = 7");
+			break;
+		case 6:
+			System.out.println("x = 6");
+			break;
+		case 5:
+			System.out.println("x = 5");
+		case 4:
+			System.out.println("x = 4");
+		case 3:
+			System.out.println("x = 3");
+		case 2:
+			System.out.println("x = 2");
+		case 1:
+			System.out.println("x = 1");
+			break; // si on oublie ce break, "default" sera aussi executé
+
+		default:
+			System.out.println("Je ne sais pas compter jusque là");
+			break;
+		}
 
 		//#############################################
-		// les boucles
+
 		int a = 0;// ici on déclare et initialise la variable a
 		int b = 0;
 		
-		/* While (condition) {...}
-		 * TODO*/
+		/* les boucles
+		 * 		while (condition) {...}
+		 * Cette boucle permet d'executer le code entre {} tant que sa (condition) est vrai.
+		 * Il faut donc bien faire attention a etre sur qu'a un moment, elle devient fause sinon
+		 * on aura une boucle folle qui ne s'arretera que quand le programme aura planté ou si
+		 * on a forcé sa fermeture.*/
 		while (a < 5) {
-			b = b + 2;
-			a = a + 1;
+			b = b + 2; // équivaut à: b+=2;
+			a = a + 1; // équivaut à: a++;
 		}
 
 		System.out.println("b = " + b);
 		System.out.println("a = " + a);
 		
 		a = 0; // on reinitialise les valeurs à 0
-		b = 0;
+		b = 0; // peut aussi s'écrire:  a = b = 0;
 
-		/* Do {...} while (condition); 
-		 * Attention, le do while execute une premiere fois le code avant
-		 * de verifier si la condition est remplie*/
+		/* 		Do {...} while (condition);
+		 * Comme le "while" sauf qu'ici, il execute une premiere fois le code avant
+		 * de verifier si la condition est remplie.
+		 * De plus, il fini par ; contrairement au "while"*/
 		do {
-			b = b+ 2;
+			b = b + 2;
 			a = a + 1;
 		}while(a < 5);
 
 		System.out.println("b = " + b);
 		System.out.println("a = " + a);
 
-		/* For (initialisation;condition;incrémentation) {...}
+		/* 		for (initialisation;condition;incrémentation) {...}
 		 * le for est toujours composé de 3 parties :
 		 * l'initialisation du compteur | la conditions | l'(dé)incrémentation du compteur*/
 		for (int i = 1; i <= 3; i++) { //i++ peut se noter aussi i = i + 1
@@ -121,7 +179,7 @@ public class Bases {
 		double nombreTemp;	/* la variable n'est pas la même que celle de la procédureci-dessus
 							 * a cause de la portée des variables (comprise entre {} )*/
 		nombreTemp = prems / deums;
-		System.out.println("Dans ma méthode : " + nombreTemp);
-		return nombreTemp;
+		System.out.println("Dans ma méthode : " + nombreTemp); // à éviter la plus part du temps
+		return nombreTemp; // puisqu'on retourne la valeur, on pourra l'afficher dans le main() si nécessaire
 	}
 }
