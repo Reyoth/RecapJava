@@ -1,4 +1,4 @@
-package b_heritage;
+package c_heritage;
 
 public class Ville { // Ville est ici la class mère
 	

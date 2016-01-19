@@ -1,4 +1,4 @@
-package d_swing;
+package e_swing;
 
 import java.awt.EventQueue;
 

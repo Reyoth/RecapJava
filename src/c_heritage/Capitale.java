@@ -1,4 +1,4 @@
-package b_heritage;
+package c_heritage;
 
 
 public class Capitale extends Ville { // ici on précise que Capitale hérite de Ville

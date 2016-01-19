@@ -1,4 +1,4 @@
-package c_classes_abstraites_et_interfaces;
+package d_classes_abstraites_et_interfaces;
 
 /* Une classe abstraite ne peut être instanciée.
  * Elle peut posseder des méthodes abstraites mais ce n'est pas obligatoire.

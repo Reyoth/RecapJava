@@ -1,8 +1,8 @@
-package c_classes_abstraites_et_interfaces;
+package d_classes_abstraites_et_interfaces;
 
-public class Guerrier extends Personnage {
+public class Archer extends Personnage {
 
-	public Guerrier(String nom, Attaque attaque) {
+	public Archer(String nom, Attaque arme) {
 		super(nom);
 		// TODO Auto-generated constructor stub
 	}

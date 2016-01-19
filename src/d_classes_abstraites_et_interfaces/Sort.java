@@ -1,8 +1,8 @@
-package c_classes_abstraites_et_interfaces;
+package d_classes_abstraites_et_interfaces;
 
-public class Poing implements Attaque {
+public class Sort implements Attaque {
 
-	public Poing() {
+	public Sort() {
 		// TODO Auto-generated constructor stub
 	}
 

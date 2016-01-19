@@ -1,4 +1,4 @@
-package c_classes_abstraites_et_interfaces;
+package d_classes_abstraites_et_interfaces;
 
 public interface Attaque { //Une interface est une classe entierement abstraite
 	
