@@ -115,9 +115,8 @@ public class Bases {
 		System.out.println("b = " + b);
 		System.out.println("a = " + a);
 
-		/* 		for (initialisation;condition;incrémentation) {...}
-		 * le for est toujours composé de 3 parties :
-		 * l'initialisation du compteur | la conditions | l'(dé)incrémentation du compteur*/
+		/* 		for (initialisation ; condition ; (dé)incrémentation) {...}
+		 * le for est toujours composé de 3 parties bien que la 1ere et la 3eme peuvent rester vide*/
 		for (int i = 1; i <= 3; i++) { //i++ peut se noter aussi i = i + 1
 			System.out.println("coucou");
 		}
@@ -133,7 +132,8 @@ public class Bases {
 		System.out.println("valeur = " + valeur);
 		
 		
-		// Le for each TODO
+		/* Le for each
+		 * TODO*/
 		int [] tabI= {5,2,3,4,6}; //déclaraton/initialisation du tableau
 		
 		for (int i : tabI) { //for each "int" in tabI (pour chaque "int" dans tabI)
@@ -152,9 +152,10 @@ public class Bases {
 	}// fin de la méthode testBases()	
 	//#################################################################
 
-	//############# Les méthodes (fonction ou procédure) ###########
 	
-	//Méthode qui retourne un string Bonjour (fonction)
+	//###### LES METHODES (fonction ou procédure) ######
+	
+	//Méthode qui retourne un string Bonjour (type fonction)
 	public static String welcome() { // entête = Welcome()message string;
 		return "Bonjour";
 	}
