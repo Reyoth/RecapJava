@@ -153,7 +153,7 @@ public class C_Structures_de_Controle {
 	
 	public static void dessineMoiUnSapin() {
 		
-		final int hauteurSapin = 9;
+		final int hauteurSapin = 13;
 		
 		int hauteurTemp = hauteurSapin, largeurSapin = 1, hauteurPiedSapin = 0;
 		while (hauteurTemp > 0) {
@@ -174,7 +174,7 @@ public class C_Structures_de_Controle {
 		
 		while (hauteurPiedSapin < hauteurSapin/3) {
 			
-			for (int eloignementPied = 1; eloignementPied < largeurSapin/3; eloignementPied++) {
+			for (int eloignementPied = 1; eloignementPied < (largeurSapin - 1)/3.0; eloignementPied++) {
 				System.out.print(" ");
 			}
 			
