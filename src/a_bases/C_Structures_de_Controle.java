@@ -2,12 +2,9 @@ package a_bases;
 
 public class C_Structures_de_Controle {
 	
-	public static void testStructures(){		
+	public static void testStructures(){	
 
-		int x; // On déclare la variable x (on reserve un espace mémoire).
-		x = 5; // On initialise la variable x (on lui donne une valeur).
-		int y; // Les types primitifs sont boolean, byte, short, int, long, double, char.
-		y = 3;
+		int x = 5, y = 3; // Déclaration et initialisation des variables utilisée dans les structures.
 
 		// ###### lES STRUCTURES DE CONTROLE ######
 
@@ -30,7 +27,7 @@ public class C_Structures_de_Controle {
 		else if (x > Integer.MAX_VALUE) { // Integer.MAX_VALUE vaut la valeur maximum d'un int soit 2147483647
 			System.out.println("là, ca ne va pas être possible...");
 		}
-		else if ((y&1)==1) { // comparaison bit à bit, ici on regarde si le 1er bit de y = 1
+		else if ((y&1)==1) { // Comparaison bit à bit, ici on regarde si le 1er bit de y = 1
 			System.out.println("on a comparé le 1er bit de y avec 1, si c'est égale c'est qu'il est impaire");
 		}
 		else {
@@ -44,7 +41,7 @@ public class C_Structures_de_Controle {
 		 * 		break;
 		 * 		}
 		 * 
-		 * cette structure rend plus lisible un code comprennant beaucoup de possibilité
+		 * Cette structure rend plus lisible un code comprennant beaucoup de possibilité
 		 * de plus, contrairement au "if", il permet d'executer plusieurs cas à la suite si 
 		 * on ne mets pas de "break;".
 		 * Ainsi, ici, si x vaut 8 il écrira juste "x = 8" mais si il vaut 5, il écrira :
@@ -73,7 +70,7 @@ public class C_Structures_de_Controle {
 			System.out.println("x = 2");
 		case 1:
 			System.out.println("x = 1");
-			break; // si on oublie ce break, "default" sera aussi executé
+			break; // Si on oublie ce break, "default" sera aussi executé
 
 		default:
 			System.out.println("Je ne sais pas compter jusque là");
@@ -81,7 +78,7 @@ public class C_Structures_de_Controle {
 		}
 
 
-		int a = 0, b = 0; // ici on déclare et initialise la variable a et b qui sont toutes 2 de type int
+		x = y = 0;
 
 		/* La boucle while
 		 * 
@@ -91,16 +88,15 @@ public class C_Structures_de_Controle {
 		 * Il faut donc bien faire attention a etre sur qu'a un moment, elle devient fause sinon
 		 * on aura une boucle folle qui ne s'arretera que quand le programme aura planté ou si
 		 * on a forcé sa fermeture.*/
-		while (a < 5) {
-			b = b + 2; // équivaut à: b+=2;
-			a = a + 1; // équivaut à: a++;
+		while (x < 5) {
+			y += 2; // On incrémente de 2
+			x ++; // On incrémente de 1
 		}
 
-		System.out.println("b = " + b);
-		System.out.println("a = " + a);
+		System.out.println("b = " + y);
+		System.out.println("a = " + x);
 
-		a = 0; // on reinitialise les valeurs à 0
-		b = 0; // peut aussi s'écrire:  a = b = 0;
+		x = y = 0; // On reinitialise les valeurs à 0
 
 		/* La boucle do while
 		 * 
@@ -110,12 +106,12 @@ public class C_Structures_de_Controle {
 		 * de verifier si la condition est remplie.
 		 * De plus, il fini par ; contrairement au "while"*/
 		do {
-			b = b + 2;
-			a = a + 1;
-		}while(a < 5);
+			y = y + 2;
+			x = x + 1;
+		}while(x < 5);
 
-		System.out.println("b = " + b);
-		System.out.println("a = " + a);
+		System.out.println("b = " + y);
+		System.out.println("a = " + x);
 
 		/* La boucle for
 		 * 
@@ -143,13 +139,57 @@ public class C_Structures_de_Controle {
 		int [] tabI= {5,2,3,4,6}; // déclaraton et initialisation du tableau pour la suite
 
 		/* Le for each
+		 * 
 		 * 		for ( type variable : tableau ) {...}
+		 * 
 		 * Contrairement au for, le for each est essentiellement utilisé pour parcourir 
 		 * les valeurs d'une collection (liste, tableau, ... ).
 		 * Ici, "i" ne pointe pas sur une case du tableau mais est une copie de la valeur de cette case.
 		 * Ainsi, changer la valeur de i n'aura aucun incident sur les valeurs du tableau parcouru.*/
 		for (int i : tabI) { // for each "int" in tabI (pour chaque "int" dans tabI)
 			System.out.println(i);
-		}			
+		}
+	}
+	
+	public static void dessineMoiUnSapin() {
+		
+		final int hauteurSapin = 9;
+		
+		int hauteurTemp = hauteurSapin, largeurSapin = 1, hauteurPiedSapin = 0;
+		while (hauteurTemp > 0) {
+			
+			for (int eloignementCimeSapin = 0 ; eloignementCimeSapin < hauteurTemp - 1; eloignementCimeSapin ++) {
+				System.out.print(" ");
+			}
+			
+			for (int largeurTemp = 0; largeurTemp < largeurSapin ; largeurTemp ++) {
+				System.out.print("*");
+			}
+			
+			
+			System.out.println();
+			hauteurTemp --;
+			largeurSapin += 2;
+		}
+		
+		while (hauteurPiedSapin < hauteurSapin/3) {
+			
+			for (int eloignementPied = 1; eloignementPied < largeurSapin/3; eloignementPied++) {
+				System.out.print(" ");
+			}
+			
+				if ((largeurSapin/3&1)==1) {
+					for (int pied = 0; pied < largeurSapin/3; pied++) {
+					System.out.print("*");
+					}
+				}
+				else {
+					for (int pied = -1; pied < largeurSapin/3; pied++) {
+						System.out.print("*");
+					}
+				}
+			System.out.println();
+			hauteurPiedSapin++;
+		}
 	}
 }
