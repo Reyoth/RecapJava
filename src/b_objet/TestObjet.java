@@ -6,7 +6,10 @@ public class TestObjet {
 		
 		int a = 5;
 		Integer z = new Integer(10);
-		z.toString();
+		System.out.println(a);
+		System.out.println(z);
+		System.out.println(z.toString());
+		
 		
 		Object monObjet = new Object();
 		Voiture mercedes = new Voiture( "grise" , "mercedes class A" , 142);		

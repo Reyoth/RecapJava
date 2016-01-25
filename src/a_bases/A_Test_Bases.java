@@ -9,8 +9,9 @@ public class A_Test_Bases {
 	public static void main(String[] args) {
 		
 		// appel de la méthode static testStructure qui se trouve dans class C_Structures_de_Controle
+		B_Types_Primitifs.testPrimitifs();
 		//C_Structures_de_Controle.testStructures();
-		C_Structures_de_Controle.dessineMoiUnSapin();
+		//C_Structures_de_Controle.dessineMoiUnSapin();
 		// appel de la méthode static testMethodes qui se trouve dans class D_Methodes
 		//D_Methodes.testMethodes();
 	}
